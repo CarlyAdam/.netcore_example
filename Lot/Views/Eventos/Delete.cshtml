@@ -1,0 +1,37 @@
+﻿@model Lot.Web.Models.EventoViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-cogs"></i>Delete Event
+        </div>
+       
+    </div>
+    <div class="portlet-body">
+        <div class="alert alert-block alert-warning fade in">
+            <button type="button" class="close" data-dismiss="alert"></button>
+            
+            <p>
+              Are you sure to delete this Event?
+            </p>
+            <p>
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="Id" />
+                    
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    <a asp-action="Index" class="btn default">
+                        Cancel
+                    </a>
+
+                </form>
+                
+                
+            </p>
+        </div>
+    </div>
+</div>
+

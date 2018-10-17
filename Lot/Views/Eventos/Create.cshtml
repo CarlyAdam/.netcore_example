@@ -1,0 +1,80 @@
+﻿@model Lot.Web.Models.EventoViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"].Errors.Count > 0)
+{
+    <div class="alert alert-danger" >
+        
+        <strong>Error!</strong>@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+    </div>
+
+}
+
+
+
+<div class="portlet box green">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-calendar"></i>Create Event
+        </div>
+        
+    </div>
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        <form asp-action="Create" class="form-horizontal">
+            <div class="form-body">
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Name</label>
+                    <div class="col-md-4">
+                        <input asp-for="Nombre" class="form-control" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Description</label>
+                    <div class="col-md-4">
+                        <input asp-for="Descripcion" class="form-control" />
+                        <span asp-validation-for="Descripcion" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">StartTime</label>
+                    <div class="col-md-4">
+                        <input asp-for="Fechainicio" class="form-control" />
+                        <span asp-validation-for="Fechainicio" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">EndTime</label>
+                    <div class="col-md-4">
+                        <input asp-for="Fechafin" class="form-control" />
+                        <span asp-validation-for="Fechafin" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <div class="form-actions">
+                <div class="row">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button type="submit" value="Create" class="btn btn-circle green">Create</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="alert alert-success">
+
+                <strong>Note: </strong>Each Event is created with 10 cards automatically.
+            </div>
+        </form>
+        <!-- END FORM-->
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
