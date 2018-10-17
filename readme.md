@@ -10,7 +10,7 @@ SOLID Principles
 Swagger
 One to Many Relationship
 Crud
-Api Crud
+Api
 ```
 
 
